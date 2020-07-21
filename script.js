@@ -1,6 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var pw = "";
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var symbols = ["!", "@", "$","#","%","^","&","*","(",")"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
@@ -42,13 +41,40 @@ function generatePassword() {
 
   console.log(passOptions);
 
-
-
-
-
+  const randomFunc = {
+    upper : getRandomUppercase,
+    lower : getRandomLowercase,
+    number : getRandomNumbers,
+    symbol : getRandomSymbols,
+  }
+  
+  function getRandomLowercase() {
+    return lowercase[Math.floor(Math.random() * lowercase.length)];
+  }
+  
+  function getRandomUppercase() {
+    return uppercase[Math.floor(Math.random() * uppercase.length)];
+  }
+  
+  function getRandomSymbols() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  }
+  
+  function getRandomNumbers() {
+    return numbers[Math.floor(Math.random() * numbers.length)];
+  }
+  
+  console.log(randomFunc);
+  
+for (i = 0; i < passLength; i++) {
+  randomFunc;
+}
 
 
 }
+
+
+
 
 function writePassword() {
   var password = generatePassword();
